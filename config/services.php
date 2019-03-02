@@ -44,4 +44,12 @@ return [
         ],
     ],
 
+    'google_adsense' => [
+        'publisher_id' => env('GOOGLE_ADSENSE_PUBLISHER_ID'),
+    ],
+
+    'google_analytics' => [
+        'property' => env('GOOGLE_ANALYTICS_PROPERTY'),
+    ],
+
 ];
