@@ -3,28 +3,30 @@
         <div class="row">
             <div class="col-md-4 col-lg-3">
                 <upload-component @queued="onApkQueued"></upload-component>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     :data-ad-client="adsense.publisher_id"
-                     :data-ad-slot="adsense.units.sidebar"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"
-                     v-if="!!adsense.publisher_id"></ins>
-                <script2 v-if="!!adsense.publisher_id">
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script2>
+                <div class="mb-3" v-if="!!adsense.publisher_id">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         :data-ad-client="adsense.publisher_id"
+                         :data-ad-slot="adsense.units.sidebar"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script2>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script2>
+                </div>
             </div>
             <div class="col-md-8 col-lg-9">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     :data-ad-client="adsense.publisher_id"
-                     :data-ad-slot="adsense.units.top"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"
-                     v-if="!!adsense.publisher_id"></ins>
-                <script2 v-if="!!adsense.publisher_id">
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script2>
+                <div class="mb-3" v-if="!!adsense.publisher_id">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         :data-ad-client="adsense.publisher_id"
+                         :data-ad-slot="adsense.units.top"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script2>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script2>
+                </div>
                 <browser-component :apk="apk" class="mb-3" ref="browser" v-if="status === 1"></browser-component>
                 <div class="card border-dashed mb-3" v-else-if="status === -1">
                     <div class="card-body text-center px-3 py-5">
